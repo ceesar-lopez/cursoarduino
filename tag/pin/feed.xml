@@ -39,42 +39,4 @@
   </atom:author>
         
 </item>
-
-<item>
-  <title>
-    <![CDATA[  Protoboard  ]]>
-  </title>
-  <link> https://tlienart.github.io/FranklinTemplates.jl/menu2/index.html </link>
-  <guid> https://tlienart.github.io/FranklinTemplates.jl/menu2/index.html </guid>
-  <description>
-    <![CDATA[  Una protoboard es una placa de pruebas que se utiliza para probar y desarrollar circuitos electrónicos. Permite la creación temporal de circuitos sin tener que soldar los componentes en una placa definitiva.  ]]>
-  </description>  
-    
-  <pubDate>Mon, 06 Feb 2023 00:00:00 +0000</pubDate>  
-  
-  
-  <atom:author>
-    <atom:name>Septimia Zenobia</atom:name>
-  </atom:author>
-        
-</item>
-
-<item>
-  <title>
-    <![CDATA[  Instalación Arduino IDE  ]]>
-  </title>
-  <link> https://tlienart.github.io/FranklinTemplates.jl/menu1/index.html </link>
-  <guid> https://tlienart.github.io/FranklinTemplates.jl/menu1/index.html </guid>
-  <description>
-    <![CDATA[  Para descargar e instalar Arduino IDE se debe acceder al sitio Web oficial de arduino, y en el apartado de software, elegir la versión del sistema operativo del que se disponga.  ]]>
-  </description>  
-    
-  <pubDate>Mon, 06 Feb 2023 00:00:00 +0000</pubDate>  
-  
-  
-  <atom:author>
-    <atom:name>Septimia Zenobia</atom:name>
-  </atom:author>
-        
-</item>
 </channel></rss>
