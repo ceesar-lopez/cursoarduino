@@ -9,14 +9,14 @@
 
   <channel>
     <title>
-      <![CDATA[  Franklin Template  ]]>
+      <![CDATA[  ArduFree  ]]>
     </title>
-    <link> https://tlienart.github.io/FranklinTemplates.jl/ </link>
+    <link> https://ceesar-lopez.github.io/cursoarduino/ </link>
     <description>
-      <![CDATA[  Example website using Franklin  ]]>
+      <![CDATA[  Curso de arduino básico  ]]>
     </description>
     <atom:link
-      href="https://tlienart.github.io/FranklinTemplates.jl/feed.xml"
+      href="https://ceesar-lopez.github.io/cursoarduino/feed.xml"
       rel="self"
       type="application/rss+xml" />
 
@@ -25,8 +25,8 @@
   <title>
     <![CDATA[  Protoboard  ]]>
   </title>
-  <link> https://tlienart.github.io/FranklinTemplates.jl/menu2/index.html </link>
-  <guid> https://tlienart.github.io/FranklinTemplates.jl/menu2/index.html </guid>
+  <link> https://ceesar-lopez.github.io/cursoarduino/menu2/index.html </link>
+  <guid> https://ceesar-lopez.github.io/cursoarduino/menu2/index.html </guid>
   <description>
     <![CDATA[  Una protoboard es una placa de pruebas que se utiliza para probar y desarrollar circuitos electrónicos. Permite la creación temporal de circuitos sin tener que soldar los componentes en una placa definitiva.  ]]>
   </description>  
@@ -35,7 +35,7 @@
   
   
   <atom:author>
-    <atom:name>Septimia Zenobia</atom:name>
+    <atom:name>César López</atom:name>
   </atom:author>
         
 </item>
