@@ -1,6 +1,10 @@
 @def title = "ArduFree"
 @def tags = ["Arduino", "curso"]
 
+~~~
+<meta name="google-site-verification" content="OFy7c72Pz2HAXSfHrECMeqCRhUaaH2Cc3-PIojXoIs0" />
+~~~
+
 # Curso de Arduino básico, de ArduFree
 
 **Arduino** es una plataforma de hardware libre y de código abierto que se ha vuelto muy popular entre la comunidad de desarrolladores y entusiastas de la tecnología. Con Arduino, **puedes crear proyectos interactivos** con sensores, actuadores y otros componentes electrónicos, lo que lo hace una herramienta ideal para **aprender electrónica y programación.**
