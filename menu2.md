@@ -1,129 +1,66 @@
 +++
-title = "More goodies"
+title = "Protoboard"
 hascode = true
-rss = "A short description of the page which would serve as **blurb** in a `RSS` feed; you can use basic markdown here but the whole description string must be a single line (not a multiline string). Like this one for instance. Keep in mind that styling is minimal in RSS so for instance don't expect maths or fancy styling to work; images should be ok though: ![](https://upload.wikimedia.org/wikipedia/en/b/b0/Rick_and_Morty_characters.jpg)"
-rss_title = "More goodies"
-rss_pubdate = Date(2019, 5, 1)
+date = Date(2023, 2, 06)
+rss = "Una protoboard es una placa de pruebas que se utiliza para probar y desarrollar circuitos electrónicos. Permite la creación temporal de circuitos sin tener que soldar los componentes en una placa definitiva."
 
-tags = ["syntax", "code", "image"]
+tags = ["Protoboard", "Arduino"]
 +++
 
-# More goodies
+
+# La Protoboard
+
+Los circuitos empleados durante el curso serán montados sobre una **protoboard**, la cual es un dispositivo que nos permite completar circuitos de manera temporal, sin necesidad de recurrir a soldaduras.
 
 \toc
 
-## More markdown support
+## Función de las protoboards
 
-The Julia Markdown parser in Julia's stdlib is not exactly complete and Franklin strives to bring useful extensions that are either defined in standard specs such as Common Mark or that just seem like useful extensions.
+Las **protoboards** son herramientas esenciales para cualquier persona que trabaje con electrónica. Son un medio eficaz para **probar** y desarrollar circuitos electrónicos antes de producirlos a gran escala. Estas placas tienen un patrón de agujeros y pistas que permiten conectar componentes electrónicos con cables temporalmente, lo que las hace ideales para la **creación temporal de circuitos** sin tener que soldar los componentes en una placa definitiva.
 
-* indirect references for instance [like so]
+Además, las protoboards son fáciles de usar y no requieren ningún tipo de habilidad de soldadura. Pueden ser utilizadas para probar diferentes configuraciones de circuitos y hacer ajustes hasta que se logre el resultado deseado. También son **útiles para la educación** y el aprendizaje de electrónica, ya que permiten experimentar con diferentes componentes y ver cómo interactúan entre sí.
 
-[like so]: http://existentialcomics.com/
+## Conexiones en Protoboard
 
-or also for images
+![Protoboard](/protoboard.png)
 
-![][some image]
+Se puede diferenciar dos zonas principales de la protoboard, las cuales presentan formas de conexión diferentes:
 
-some people find that useful as it allows referring multiple times to the same link for instance.
+* La zona de los extremos superiores e inferiores (la que tiene los símbolos + y -) son los buses de alimentación.
+* La zona central, cuyas posiciones se caracterizan por una letra y un número (ejemplo: posición g23).
 
-[some image]: https://upload.wikimedia.org/wikipedia/commons/9/90/Krul.svg
+### Buses de alimentación
 
-* un-qualified code blocks are allowed and are julia by default, indented code blocks are not supported by default (and there support will disappear completely in later version)
+Las conexiones en los buses de alimentación se llevan a cabo de manera longitudinal, como se representa mediante las lineas de color rojo. Varios dispositivos que se encuentren introducidos en la misma linea longitudinal, estarán conectados mutuamente.
 
-```
-a = 1
-b = a+1
-```
+![Conexión en los buses de alimentación](/buses.png)
 
-you can specify the default language with `@def lang = "julia"`.
-If you actually want a "plain" code block, qualify it as `plaintext` like
+### Zona central
 
-```plaintext
-so this is plain-text stuff.
-```
+Las conexiones en la zona central se llevan a cabo de manera transversal, como se representa mediante las lineas de color azul. Varios dispositivos que se encuentren introducidos en la misma linea transversal, estarán conectados mutuamente.
 
-## A bit more highlighting
+![Conexión en la zona central](/central.png)
 
-Extension of highlighting for `pkg` an `shell` mode in Julia:
+## Conexiones de ejemplo
 
-```julia-repl
-(v1.4) pkg> add Franklin
-shell> blah
-julia> 1+1
-(Sandbox) pkg> resolve
-```
+Para verificar si se han adquirido los conocimientos sobre las conexiones en protoboard, se va a proponer dos ejemplos de conexiones que deberán realizarse en la protoboard. Es recomendable intentarlo y luego visualizar el resultado (los resultados pueden variar, ya que las celdas seleccionadas de la protoboard no tienen por que coincidir).
 
-you can tune the colouring in the CSS etc via the following classes:
+### Ejemplo 1: Circuito RLC en serie
 
-* `.hljs-meta` (for `julia>`)
-* `.hljs-metas` (for `shell>`)
-* `.hljs-metap` (for `...pkg>`)
+Los circuitos RLC son circuitos electrónicos que combinan resistencias (R), inductancias (L) y capacitores (C) en un sistema. A continuación se muestra un esquema del circuito.
 
-## More customisation
+![Circuito RLC](/RLC.png)
 
-Franklin, by design, gives you a lot of flexibility to define how you want stuff be done, this includes doing your own parsing/processing and your own HTML generation using Julia code.
+Ahora, trate de recrear este circuito utilizando una protoboard. Puede realizarlo de manera digital visitando la web de [Tinkercad](https://www.tinkercad.com). A continuación, se muestra la solución en una protoboard.
 
-In order to do this, you can define two types of functions in a `utils.jl` file which will complement your `config.md` file:
+![Circuito RLC resuelto](/solucion_RLC.png)
 
-* `hfun_*` allow you to plug custom-generated HTML somewhere
-* `lx_*` allow you to do custom parsing of markdown and generation of HTML
+### Ejemplo 2: Resistencias en paralelo
 
-The former (`hfun_*`) is most likely to be useful.
+Las conexiones de componentes electrónicos en paralelo supone un nivel de dificultad alto para las personas completamente novatas, no obstante, es de vital importancia saber llevarlas a cabo. Tómese su tiempo. El circuito a recrear en una protoboard es el siguiente.
 
-### Custom "hfun"
+![Circuito paralelo](/paralelo.png)
 
-If you define a function `hfun_bar` in the `utils.jl` then you have access to a new template function `{{bar ...}}`. The parameters are passed as a list of strings, for instance variable names but it  could just be strings as well.
+Ahora, trate de recrear este circuito utilizando una protoboard. Puede realizarlo de manera digital visitando la web de [Tinkercad](https://www.tinkercad.com). A continuación, se muestra la solución en una protoboard.
 
-For instance:
-
-```julia
-function hfun_bar(vname)
-  val = Meta.parse(vname[1])
-  return round(sqrt(val), digits=2)
-end
-```
-
-~~~
-.hf {background-color:black;color:white;font-weight:bold;}
-~~~
-
-Can be called with `{{bar 4}}`: **{{bar 4}}**.
-
-Usually you will want to pass variable name (either local or global) and collect their value via one of `locvar`, `globvar` or `pagevar` depending on your use case.
-Let's have another toy example:
-
-```julia
-function hfun_m1fill(vname)
-  var = vname[1]
-  return pagevar("menu1", var)
-end
-```
-
-Which you can use like this `{{m1fill title}}`: **{{m1fill title}}**. Of course  in this specific case you could also have used `{{fill title menu1}}`: **{{fill title menu1}}**.
-
-Of course these examples are not very useful, in practice you might want to use it to generate actual HTML in a specific way using Julia code.
-For instance you can use it to customise how [tag pages look like](/menu3/#customising_tag_pages).
-
-A nice example of what you can do is in the [SymbolicUtils.jl manual](https://juliasymbolics.github.io/SymbolicUtils.jl/api/) where they use a `hfun_` to generate HTML encapsulating the content of code docstrings, in a way doing something similar to what Documenter does. See [how they defined it](https://github.com/JuliaSymbolics/SymbolicUtils.jl/blob/website/utils.jl).
-
-**Note**: the  output **will not** be reprocessed by Franklin, if you want to generate markdown which should be processed by Franklin, then use `return fd2html(markdown, internal=true)` at the end.
-
-### Custom "lx"
-
-These commands will look the same as latex commands but what they do with their content is now entirely controlled by your code.
-You can use this to do your own parsing of specific chunks of your content if you so desire.
-
-The definition of `lx_*` commands **must** look like this:
-
-```julia
-function lx_baz(com, _)
-  # keep this first line
-  brace_content = Franklin.content(com.braces[1]) # input string
-  # do whatever you want here
-  return uppercase(brace_content)
-end
-```
-
-You can call the above with `\baz{some string}`: \baz{some string}.
-
-**Note**: the output **will be** reprocessed by Franklin, if you want to avoid this, then escape the output by using `return "~~~" * s * "~~~"` and it will be plugged  in as is in the HTML.
+![Circuito paralelo resuelto](/solucion_paralelo.png)
